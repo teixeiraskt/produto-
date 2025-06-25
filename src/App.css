@@ -1,0 +1,215 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%; /* Preto quase total */
+    --foreground: 0 0% 98%; /* Branco */
+    --card: 0 0% 6%; /* Preto mais claro para cards */
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 120 80% 50%; /* Verde vibrante */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 14.9%; /* Cinza escuro */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%; /* Vermelho */
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 120 80% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(180deg, #1a0000 0%, #000000 50%, #001a00 100%);
+}
+
+.gradient-hero {
+  /* background handled by body */
+}
+
+.gradient-red-black {
+  /* background handled by body */
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #00FF00, #FF0000) !important; /* Verde para Vermelho */
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.neon-text-green {
+  text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 20px var(--primary);
+}
+
+.neon-text-red {
+  text-shadow: 0 0 5px var(--destructive), 0 0 10px var(--destructive), 0 0 20px var(--destructive);
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.container-mobile {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 0;
+  }
+  .container-mobile {
+    max-width: 1200px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-responsive {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.card-responsive:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary);
+  opacity: 0.9;
+}
+
+.hover-glow-green:hover {
+  box-shadow: 0 0 15px var(--primary);
+}
+
+.pulse-glow-green {
+  animation: pulse-glow-green 2s infinite;
+}
+
+@keyframes pulse-glow-green {
+  0% { box-shadow: 0 0 5px var(--primary); }
+  50% { box-shadow: 0 0 20px var(--primary); }
+  100% { box-shadow: 0 0 5px var(--primary); }
+}
+
+.sale-notification {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--primary);
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes border-slide {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { transform: translateX(0%); opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+.animate-border-slide {
+  animation: border-slide 2s infinite linear;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important; /* Verde sólido */
+  color: var(--primary-foreground);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.botao-comprar {
+  position: relative;
+  background-color: #9ACD32; /* Verde abacate mais claro */
+  color: #000; /* Texto preto */
+  padding: 20px 40px;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap; /* Evita quebra de linha */
+  text-align: center;
+  border-radius: 8px;
+  width: 475px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .botao-comprar {
+    width: 92%; /* Usa 92% da largura da tela no mobile */
+    max-width: 400px; /* Máximo de 400px */
+    height: 48px; /* Altura ajustada para 48px */
+    font-size: 18px; /* Reduz um pouco a fonte */
+    padding: 15px 20px; /* Ajusta o padding */
+    margin: 0 auto; /* Centraliza o botão */
+  }
+  
+  .botao-comprar::before {
+    border: 1.5px solid #9ACD32; /* Verde abacate mais claro para o contorno */
+  }
+}
+
+.botao-comprar::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 12px;
+  border: 1.5px solid #9ACD32; /* Verde abacate mais claro para o contorno */
+  z-index: -1;
+}
+
+.botao-comprar span {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

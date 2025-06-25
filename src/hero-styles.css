@@ -1,0 +1,99 @@
+/* Estilos adicionais para alinhamento responsivo */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hero-title {
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-subtitle div {
+  margin-bottom: 0.5rem;
+}
+
+.hero-text {
+  margin-bottom: 1.5rem; /* Reduzido para mobile */
+}
+
+.hero-text p {
+  margin-bottom: 0.8rem; /* Reduzido para mobile */
+  line-height: 1.7;
+}
+
+.hero-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem; /* Reduzido para mobile */
+}
+
+/* Responsividade para mobile */
+@media (max-width: 767px) {
+  .hero-content {
+    padding: 0 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem; /* Menor espaçamento no mobile */
+  }
+  
+  .hero-text p {
+    margin-bottom: 0.6rem; /* Frases mais próximas no mobile */
+    color: #b3b3b3; /* Cinza mais claro */
+  }
+  
+  .hero-button-container {
+    margin-top: 0.8rem; /* Botão mais próximo das frases */
+  }
+}
+
+/* Alinhamento específico para desktop */
+@media (min-width: 768px) {
+  .hero-content {
+    max-width: 700px; /* Reduzido para alinhar melhor */
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .hero-text {
+    font-size: 1.1rem; /* Reduzido para desktop */
+    line-height: 1.6;
+    max-width: 650px; /* Largura menor para as duas últimas frases */
+  }
+  
+  .hero-text p {
+    color: #b3b3b3; /* Cinza mais claro também no desktop */
+  }
+}
+
