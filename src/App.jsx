@@ -102,9 +102,9 @@ function App() {
           
           {/* Riscos Verdes */}
           <div className="absolute top-0 right-0 p-4 block md:hidden">
-            <div className="w-6 h-1 bg-green-500 mb-1"></div>
-            <div className="w-6 h-1 bg-green-500 mb-1"></div>
-            <div className="w-6 h-1 bg-green-500"></div>
+            <div className="w-8 h-1 bg-green-500 mb-1"></div>
+            <div className="w-8 h-1 bg-green-500 mb-1"></div>
+            <div className="w-8 h-1 bg-green-500"></div>
           </div>
           
           {/* Menu Mobile */}
@@ -169,7 +169,7 @@ function App() {
               </div>
               
               <div className="hero-button-container flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="botao-comprar">
+                <button className="botao-comprar pulse-glow-green">
                   <span>GARANTIR MINHA VAGA AGORA!</span>
                 </button>
               </div>
@@ -260,7 +260,7 @@ function App() {
               <p className="text-lg md:text-xl text-white/80">ou 12x de R$ 29,70</p>
             </div>
             
-            <button className="botao-comprar">
+            <button className="botao-comprar pulse-glow-green">
               <span>QUERO GARANTIR MINHA VAGA AGORA!</span>
             </button>
           </div>
@@ -277,4 +277,3 @@ function App() {
 }
 
 export default App
-
