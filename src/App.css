@@ -104,7 +104,7 @@ body {
 }
 
 .hover-glow-green:hover {
-  box-shadow: 0 0 15px var(--primary);
+  box-shadow: 0 0 15px #22c55e;
 }
 
 .pulse-glow-green {
@@ -112,9 +112,9 @@ body {
 }
 
 @keyframes pulse-glow-green {
-  0% { box-shadow: 0 0 5px var(--primary); }
-  50% { box-shadow: 0 0 20px var(--primary); }
-  100% { box-shadow: 0 0 5px var(--primary); }
+  0% { box-shadow: 0 0 5px #22c55e; }
+  50% { box-shadow: 0 0 20px #22c55e; }
+  100% { box-shadow: 0 0 5px #22c55e; }
 }
 
 .sale-notification {
@@ -132,14 +132,14 @@ body {
   100% { transform: translateY(0px); }
 }
 
+.animate-border-slide {
+  animation: border-slide 2s infinite linear;
+}
+
 @keyframes border-slide {
   0% { transform: translateX(-100%); opacity: 0; }
   50% { transform: translateX(0%); opacity: 1; }
   100% { transform: translateX(100%); opacity: 0; }
-}
-
-.animate-border-slide {
-  animation: border-slide 2s infinite linear;
 }
 
 .btn-primary {
@@ -167,9 +167,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  border: 2px solid #22c55e;
   cursor: pointer;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
@@ -183,20 +184,27 @@ body {
   }
   
   .botao-comprar::before {
-    border: 1.5px solid #9ACD32; /* Verde abacate mais claro para o contorno */
+    border: 1.5px solid #22c55e;
   }
 }
 
 .botao-comprar::before {
   content: "";
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  border-radius: 12px;
-  border: 1.5px solid #9ACD32; /* Verde abacate mais claro para o contorno */
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 10px;
+  border: 2px solid #22c55e;
   z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.botao-comprar:hover::before {
+  opacity: 1;
+  animation: border-slide 2s infinite linear;
 }
 
 .botao-comprar span {
@@ -212,4 +220,3 @@ body {
     transform: rotate(360deg);
   }
 }
-
